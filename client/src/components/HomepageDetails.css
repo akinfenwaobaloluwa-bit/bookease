@@ -1,0 +1,228 @@
+.homepage-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  gap: 1rem;
+}
+
+.details-contact-card,
+.details-info-card {
+  border-radius: 1.5rem;
+  padding: clamp(1.6rem, 4vw, 3rem);
+}
+
+.details-contact-card {
+  background: #2e2543;
+  color: white;
+}
+
+.details-contact-card .premium-kicker {
+  color: #c4b5fd;
+}
+
+.details-contact-card h2 {
+  max-width: 34rem;
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.details-contact-card > p:not(.premium-kicker) {
+  max-width: 28rem;
+  margin: 1.5rem 0 2rem;
+  color: #d9d2e7;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.details-whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 999px;
+  padding: 0.9rem 1.2rem;
+  background: #c4b5fd;
+  color: #2e2543;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.details-whatsapp-button span {
+  font-size: 1.1rem;
+}
+
+.details-info-card {
+  display: grid;
+  gap: 1.8rem;
+  border: 1px solid #e9e4ed;
+  background: white;
+}
+
+.details-info-card p {
+  margin: 0.45rem 0 0;
+  color: #777184;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.details-label {
+  color: #7c3aed;
+  font-family: Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.opening-hours-list {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.opening-hours-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid #f0edf2;
+  padding-bottom: 0.45rem;
+  color: #777184;
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+}
+
+.faq-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 2rem 7rem;
+  gap: 4rem;
+}
+
+.faq-heading h2 {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+}
+
+.faq-list {
+  border-top: 1px solid #e9e4ed;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e9e4ed;
+}
+
+.faq-item button {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 0;
+  padding: 1.2rem 0;
+  background: transparent;
+  color: #292338;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-align: left;
+}
+
+.faq-plus {
+  color: #7c3aed;
+  font-size: 1.25rem;
+}
+
+.faq-item p {
+  max-width: 38rem;
+  margin: -0.4rem 0 1.2rem;
+  color: #777184;
+  font-family: Arial, sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.floating-whatsapp {
+  position: fixed;
+  z-index: 20;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border-radius: 999px;
+  padding: 0.78rem 1rem;
+  background: #25d366;
+  color: white;
+  box-shadow: 0 12px 30px rgb(37 211 102 / 28%);
+  font-family: Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 180ms ease-out;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-3px);
+}
+
+.whatsapp-dot {
+  font-size: 0.7rem;
+}
+
+.detail-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 700ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.detail-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 780px) {
+  .homepage-details,
+  .faq-section {
+    grid-template-columns: 1fr;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    gap: 1rem;
+  }
+
+  .faq-section {
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-whatsapp {
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .floating-whatsapp {
+    transition: none;
+  }
+}
